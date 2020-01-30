@@ -30,15 +30,21 @@
              
 		   		   
 		   <a-video  width="640" height="480">
-		      <source id="comparadorLitoral" src="video/ecosistemaLitoral.mp4" type="video/mp4">
+		      <source id="comparadorLitoral" src="video/ecosistemaLitoral.mp4" type="video/mp4"  controls>
            </a-video>
 				   
 			<video  width="640" height="480">
 		      <source id="ebre" src="video/plomaDeEbre.mp4" type="video/mp4">
            </video>	   
+		   
+		   
+		   <video id="video"  autoplay loop crossorigin="anonymous" playsinline webkit-playsinline src="https://cdn.glitch.com/e614a6f8-f4ba-4733-8a7c-e61e5d59427e%2Fd55bddf8d62910879ed9f605522149a8.mp4?1551541382508"></video></a-assets>
         </a-assets>
 		
 		
+		<a-marker type="pattern" preset="hiro" material="" arjs-anchor="" arjs-hit-testing="" smooth="true">
+         <a-video play-on-window-click src="#video" width="1.6" height="0.9" rotation="90 180 0" position="0 2 0" material="" geometry=""></a-video>
+        </a-marker>
        
         <!--14 Video comparador litoral-->
         <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
