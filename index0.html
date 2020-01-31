@@ -1,0 +1,60 @@
+<-DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="https://aframe.io/releases/1.0.1/aframe.min.js"></script>
+	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/dev/aframe/build/aframe-ar.js"></script>   <!--new code-->
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script><!--new code-->
+	<title>Ciència i coneixement </title>
+	<meta charset="UTF-8"/>
+	<meta name="title" content="ciència i coneixement"/>
+	<meta name="description" content="El territori des de l'espai"/>
+	<meta name="author" content="Antonio López García"/>
+	<meta name="keywords" content="augmented reality, space, science, 3D, realidad aumentada, satellite, mapping, cartografia, satelite "/>
+	
+	<meta name="apple-mobile-web-app-capable" content="yes"><!--new code-->
+  </head>
+
+  <body style='margin : 0px; overflow: hidden;'>
+     <!--position ="x z y"-->
+	 <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">   
+        <a-assets>
+		   
+		   <!--14 Video comparador litoral-->	   
+		   <!--<a-video id="comparadorLitoral" source src="video/ecosistemaLitoral.mp4" type="video/mp4" preload="auto" ></a-video>-->
+             
+		   		   
+		   <a-video  width="640" height="480">
+		      <source id="comparadorLitoral" src="video/ecosistemaLitoral.mp4" type="video/mp4"  controls>
+           </a-video>
+				   
+			<video  width="640" height="480">
+		      <source id="ebre" src="video/plomaDeEbre.mp4" type="video/mp4">
+           </video>	   
+		   
+		   
+		   <video id="mivideo" crossOrigin="anonymous" playsinline webkitplaysinline autoplay controls muted src="video/1.mp4"></video>
+		   <a-video src="#mivideo" position="0 0 0" rotation="270 0 0" ></a-video>
+		   
+        </a-assets>
+		
+		
+		<a-marker type="pattern" preset="hiro" material="" arjs-anchor="" arjs-hit-testing="" smooth="true">
+         <a-video play-on-window-click src="#video" width="1.6" height="0.9" rotation="90 180 0" position="0 2 0" material="" geometry=""></a-video>
+        </a-marker>
+       
+        <!--14 Video comparador litoral-->
+        <a-marker type="pattern" preset="custom" url="data/pattern-markerLiroralCat.patt">
+  		   <a-entity geometry="primitive: plane" scale="6 4 1" position="0 0 0" rotation="-90 0 0" material="src: #comparadorLitoral"></a-entity>
+		</a-marker>
+		
+		<a-marker type="pattern" preset="custom" url="data/pattern-markerPlomaEbre.patt">
+  		   <a-entity geometry="primitive: plane" scale="6 4 1" position="0 0 0" rotation="-90 0 0" material="src: #ebre"></a-entity>
+		</a-marker>
+		
+		
+	
+  	    <a-entity camera></a-entity>
+	</a-scene>
+
+</body>
+</html>
